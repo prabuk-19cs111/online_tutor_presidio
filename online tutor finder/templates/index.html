@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <link rel="stylesheet" href="{{ url_for('static',filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='owl.carousel.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='owl.theme.default.min.css') }}">
+    <link href="https://fonts.googleapis.com/css?family=Oswald:200,300,regular,500,600,700|Raleway:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic|Cairo:200,300,regular,500,600,700,800,900|Dancing+Script:regular,500,600,700|Prompt:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic" rel="stylesheet" type="text/css">
+</head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<div class="topnav" id="myTopnav">
+  
+ 
+  <a href="{{ url_for('create') }}">Create</a>
+  
+  <a href="{{ url_for('delete') }}">Delete</a>
+  <a href="{{ url_for('home') }}"><img src="{{url_for('static', filename='pschange.png')}}" id="passi"></a>
+   <a href="{{ url_for('logout') }}" id="log">Login/Logout</a>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+
+    <i class="fa fa-bars"></i>
+  </a>
+
+       </div>
+       <script>
+        function myFunction() {
+          var x = document.getElementById("myTopnav");
+          if (x.className === "topnav") {
+            x.className += " responsive";
+          } else {
+            x.className = "topnav";
+          }
+        }
+        </script>
+       
+ 
+<body>
+  <div class="container">
+  {% for i in l %}
+  <div class="thedata">
+  <p class="cname">{{ i['name'] }}</p>
+  <p class="venue">{{ i['subject'] }}</p>
+  <p class="venue">{{ i['location'] }}</p>
+  <p><a href="https://www.gmail.com"><input type="button" value="Register" id="ulsub"></a></p>
+</div>
+  {% endfor %}
+  
+</div>
+</body>
+
+
+
+</html>
